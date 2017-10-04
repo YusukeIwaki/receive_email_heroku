@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   resource :inspect, only: [] do
     get :ip
   end
+  
+  namespace :sendgrid do
+    post :webhook, to: 'webhook#incoming'
+  end
 end
